@@ -1,0 +1,701 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="IntentCandidate" id="4~|L2QkB~X}H)o*lFT2f">Good Feelings</variable>
+    <variable type="IntentCandidate" id="t{t?X$n3kP6moDnxhkNv">Sad Feelings</variable>
+    <variable type="IntentCandidate" id="(c,}:5Wo(;V7vvD68wb9">Favourite Sports</variable>
+    <variable type="GenericValue" id="NZ6LBCmw{K]]X6rD#?py">Name</variable>
+  </variables>
+  <block type="state" id="X|$E?T7=thHbz4WMxJjv" x="-975" y="19">
+    <field name="stateName">state1</field>
+    <statement name="actions">
+      <block type="action_mask" id="QJDm!w;R;OXuhzB+-wFU">
+        <field name="model">adult</field>
+        <next>
+          <block type="action_voice" id="-ta2QJL`uHcXY+5jk(l_">
+            <field name="voice">Arthur-Neural (en-GB) - Amazon Polly</field>
+            <next>
+              <block type="if_then_else" id="CA1NPVZIY)=mJ6:oha|E">
+                <value name="cond">
+                  <block type="cond_has_users" id="?BpMXag0:4z2U!tEkE76"></block>
+                </value>
+                <statement name="actions">
+                  <block type="goto" id="aI{mu%PE8WW`Fn*KcsC^">
+                    <field name="stateName">start</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="define_intent" id="?51O@$?);B5ZUiNB]j6k" x="-416" y="8">
+    <field name="intent_name" id="4~|L2QkB~X}H)o*lFT2f" variabletype="IntentCandidate">Good Feelings</field>
+    <value name="intent">
+      <block type="intent_simple" id="l}kooG%fS-Nssbl3a@3T">
+        <statement name="exampleBlocks">
+          <block type="intent_example" id="8+_3A)wuVI(_xKV_k-U|">
+            <field name="text">Great</field>
+            <next>
+              <block type="intent_example" id="]D2U/1)ejyz-)%v[R=$F">
+                <field name="text">Okay</field>
+                <next>
+                  <block type="intent_example" id="B{sl+o(qhG:c?FTG;Z3(">
+                    <field name="text">good</field>
+                    <next>
+                      <block type="intent_example" id="i+v_U_K3xNsWRsyKjzC:">
+                        <field name="text">fantastic</field>
+                        <next>
+                          <block type="intent_example" id="@5Q`12YC[$CW?TrYR2+q">
+                            <field name="text">amazing</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </value>
+  </block>
+  <block type="state" id=",e*CUbJ[ml^9HBMnf/5." deletable="false" editable="false" x="10" y="10">
+    <field name="stateName">start</field>
+    <statement name="actions">
+      <block type="say_utterance" id="PdCufw%lUiJh3~0057vo">
+        <statement name="utterance">
+          <block type="utt_text" id="}XaYH3+`i]THxQP!xQ=Y">
+            <field name="text">Hello, I don't have a name</field>
+            <next>
+              <block type="utt_gesture" id="l8.@YB]cHL)s[z)!xbG6">
+                <field name="gesture">ExpressSad</field>
+                <next>
+                  <block type="utt_delay" id="xCHK3!r/V;,kGY^~]g+_">
+                    <field name="delay">500</field>
+                    <next>
+                      <block type="utt_text" id="pm)Q_qt5.fd/+,AW/..T">
+                        <field name="text">But I know I'm a Furhat Robot, So that's something I guess</field>
+                        <next>
+                          <block type="utt_delay" id="]bPapskwD7=/-0aY]dTO">
+                            <field name="delay">500</field>
+                            <next>
+                              <block type="utt_gesture" id="D{]m!Q:00f[g~d*RS|GX">
+                                <field name="gesture">Smile</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="action_gesture" id="Ld$bnm+D.nQx3z@NlQw}">
+            <field name="gesture">BigSmile</field>
+            <next>
+              <block type="listen" id="KwF-FFmD#}A#1sH)Z(`P"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="onreentry" id="5.:34q0oZmx6/NVO5akE">
+        <statement name="actions">
+          <block type="listen" id="%;n)c*#*tR|tYtpm/z=^"></block>
+        </statement>
+        <next>
+          <block type="onresponse_nothing" id="t,=w2pl_Ww2rAWZ)kF..">
+            <statement name="actions">
+              <block type="reentry" id="_;WtQh[QV%YG?,)cXMph"></block>
+            </statement>
+            <next>
+              <block type="onresponse_intent" id="ZFctVPv+rmO8|+#NF!qe">
+                <value name="intent">
+                  <block type="intent_greeting" id="C{G69fQiPRY|[5!*i;@l"></block>
+                </value>
+                <statement name="actions">
+                  <block type="goto" id="j%Lx#q_;_gDmfGLM$/Y4">
+                    <field name="stateName">HowAreYou</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="onresponse_nothing" id="+X!7mPmu+rSRz7$rAtwK">
+                    <statement name="actions">
+                      <block type="reentry" id="p7sP;?wlJb;l$eOyv~p~"></block>
+                    </statement>
+                    <next>
+                      <block type="onresponse_any" id=":e${N+1,8{.u;Qa27hzw">
+                        <statement name="actions">
+                          <block type="say_utterance" id="bZY+dhhd5LyZpqIi-|S4">
+                            <statement name="utterance">
+                              <block type="utt_text" id="yatyo-aLDM)a3FDG.E,c">
+                                <field name="text">What was that?</field>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="reentry" id="/:V|y49_kaKUv1!{2g6w"></block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="state" id="ettIYE@?#L5ND:OK%[G," x="504" y="17">
+    <field name="stateName">HowAreYou</field>
+    <statement name="actions">
+      <block type="ask_utterance" id="Yn4hhj[KVGJZ0QLa*C=o">
+        <statement name="utterance">
+          <block type="utt_text" id="[BC0ZwhrnPK=QIKdb2nN">
+            <field name="text">How are you?</field>
+            <next>
+              <block type="utt_gesture" id="%q(W*QcaWl30stF^fYA1">
+                <field name="gesture">BrowRaise</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <next>
+      <block type="onresponse_intent" id="`LA9wWkqLsufD~%OH]kl">
+        <value name="intent">
+          <block type="intent_variable" id="lE{@]]Sg~V9%Av;_vac@">
+            <field name="varname" id="4~|L2QkB~X}H)o*lFT2f" variabletype="IntentCandidate">Good Feelings</field>
+          </block>
+        </value>
+        <statement name="actions">
+          <block type="say_utterance" id="rn@`$}M09q3flbA6v4$?">
+            <statement name="utterance">
+              <block type="utt_text" id="SZ2n5*;#^(TSHcNnp,QW">
+                <field name="text">I'm not too bad myself</field>
+              </block>
+            </statement>
+            <next>
+              <block type="action_gesture" id="^Jy]~.2~0GsqaO@M4^u~">
+                <field name="gesture">Thoughtful</field>
+                <next>
+                  <block type="goto" id="niv;NN,1t|Kg1_ehyD-t">
+                    <field name="stateName">WhatIsYourName</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="onresponse_intent" id="!tIv=4axZoF=c3^bRDCR">
+            <value name="intent">
+              <block type="intent_variable" id="oYN|!4apa[#N@m/;G+YC">
+                <field name="varname" id="t{t?X$n3kP6moDnxhkNv" variabletype="IntentCandidate">Sad Feelings</field>
+              </block>
+            </value>
+            <statement name="actions">
+              <block type="say_utterance" id="JGMU%All8{-^8t;9[?5N">
+                <statement name="utterance">
+                  <block type="utt_text" id=")a{`@w%-lEH!fVX-2g#T">
+                    <field name="text">I'm sorry to hear that</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="action_gesture" id="(Uf~K!XZyrbYi[QHl57M">
+                    <field name="gesture">ExpressSad</field>
+                    <next>
+                      <block type="goto" id="#$h2:S^#b==FF9_l$nH7">
+                        <field name="stateName">WhyAreYouSad</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="onresponse_any" id="L|Ci;%D(58nF!4J]u_8B">
+                <statement name="actions">
+                  <block type="say_utterance" id="mbGz+B8;d0s9-Sh``KI7">
+                    <statement name="utterance">
+                      <block type="utt_text" id="6]@k+Gae1a{|XjoxGS`t">
+                        <field name="text">I think today will be a great day</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="goto" id="|MF[`*M`lA0`)!g.Vn8`">
+                        <field name="stateName">WhatIsYourName</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="onresponse_nothing" id="`2MmiWPEzl%YRP_xh1A+">
+                    <statement name="actions">
+                      <block type="say_utterance" id="*KHn1NvN$2y6YG}RQXzB">
+                        <statement name="utterance">
+                          <block type="utt_text" id="BFOELmt}:])s$ny}qXVk">
+                            <field name="text">I asked. How are you today?</field>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="reentry" id="t0Z;c`8Ibwy96,BGW#E,"></block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="state" id="J[u`QV[=QQ3*X@D.UFkF" x="888" y="-1">
+    <field name="stateName">WhatIsYourName</field>
+    <statement name="actions">
+      <block type="ask_utterance" id="3JnPMNea68E|HjnucZ5I">
+        <statement name="utterance">
+          <block type="utt_text" id="dwlvEmeB{9%k_^JY0FS;">
+            <field name="text">What's your name?</field>
+            <next>
+              <block type="utt_gesture" id="+;rcUzSJ]QT/oE|%,9SM">
+                <field name="gesture">BrowRaise</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <next>
+      <block type="onresponse_intent" id="Kg-e%_5RiXuWW.x3^#fR">
+        <value name="intent">
+          <block type="intent_entity" id="/R{/P1d1[.Z33a#FRu6,">
+            <statement name="entityBlocks">
+              <block type="entity_name" id="HXB/u$V5z$UT`OUHhj=u">
+                <field name="variable" id="NZ6LBCmw{K]]X6rD#?py" variabletype="GenericValue">Name</field>
+              </block>
+            </statement>
+          </block>
+        </value>
+        <statement name="actions">
+          <block type="say_utterance" id="ng-T[k~5._?Vt[g2-vo`">
+            <statement name="utterance">
+              <block type="utt_text" id="f*=QQ9SQiohOgw-YaJK%">
+                <field name="text">Nice to meet you</field>
+                <next>
+                  <block type="utt_value" id="jzBU^okuRPj]X#,C--^A">
+                    <value name="value">
+                      <block type="variable_get" id="t0Vt!W|^;F;wqvw4=1P+">
+                        <field name="varname" id="NZ6LBCmw{K]]X6rD#?py" variabletype="GenericValue">Name</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="action_gesture_param" id="9KEKNOk10TY|sY=JxLAX">
+                <field name="gesture">Nod</field>
+                <value name="strength">
+                  <shadow type="text" id="6Yq[rns5U8zc=yjqmjm9">
+                    <field name="value">1.0</field>
+                  </shadow>
+                </value>
+                <value name="duration">
+                  <shadow type="text" id="xq144zC^fM](olvJmrz@">
+                    <field name="value">0.5</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="action_gesture" id="b0}P+bX8-=gBPdyu%Wu1">
+                    <field name="gesture">Smile</field>
+                    <next>
+                      <block type="goto" id=":iKUOZeRtogI)Bc?f-bP">
+                        <field name="stateName">FavouriteSports</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="onresponse_any" id="0HnYebm?hI47W-2t?@}/">
+            <statement name="actions">
+              <block type="say_utterance" id=";799wZ,VDsUL]iC^8`EF">
+                <statement name="utterance">
+                  <block type="utt_text" id="bSo|g206!pK[qcAxQ6:B">
+                    <field name="text">I didn't catch that</field>
+                    <next>
+                      <block type="utt_delay" id="_,uP_k1#+SYIuRAi.=.Q">
+                        <field name="delay">500</field>
+                        <next>
+                          <block type="utt_text" id="Cp_39RRH#TgqGJYPwBv.">
+                            <field name="text">I'll just call you Peach</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="action_gesture" id="hmAQit3H3t#A,vsW[S8G">
+                    <field name="gesture">Wink</field>
+                    <next>
+                      <block type="goto" id="_m*H%iUg#!xyWV(!F*z;">
+                        <field name="stateName">FavouriteSports</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="onresponse_nothing" id="KQ@hAsLJbKQX~J},H#lz">
+                <statement name="actions">
+                  <block type="say_utterance" id="iRwNx5MG0nWO}Nf~5X{$">
+                    <statement name="utterance">
+                      <block type="utt_text" id="g$MJ.gvcxMGT`bY/)]}J">
+                        <field name="text">I asked. What's your name?</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="reentry" id="6WRlr6AL)lSGq-7|PV}g"></block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="state" id="1?FnJh55NG{E#(1#NIS$" x="1379" y="8">
+    <field name="stateName">FavouriteSports</field>
+    <statement name="actions">
+      <block type="ask_utterance" id="F|qY[#mg,w[yQi46NXE6">
+        <statement name="utterance">
+          <block type="utt_text" id="e3)z++?/o6PT5e(kx9N1">
+            <field name="text">What sport's do you like</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <next>
+      <block type="onresponse_intent" id="ucDLL7:*ljb4`6x$n,LQ">
+        <value name="intent">
+          <block type="intent_variable" id="v4!fAz1OU_.R^S{PNGS?">
+            <field name="varname" id="(c,}:5Wo(;V7vvD68wb9" variabletype="IntentCandidate">Favourite Sports</field>
+          </block>
+        </value>
+        <statement name="actions">
+          <block type="say_utterance" id="O4AWBrCjrcpKS.Llaq([">
+            <statement name="utterance">
+              <block type="utt_text" id="ixy7[N_R*E`4_Gvb_)da">
+                <field name="text">I really like that one too</field>
+              </block>
+            </statement>
+            <next>
+              <block type="action_gesture" id="YrjVq}lm=r,G4Rp+@3i=">
+                <field name="gesture">Surprise</field>
+                <next>
+                  <block type="say_utterance" id="RIPKH{FD0*I:ZHHs_}Xl">
+                    <statement name="utterance">
+                      <block type="utt_text" id="klZD(xOUds~M7U#Wf7dJ">
+                        <field name="text">I'm sorry but I need to head off but we should do this again</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="goto" id="OX14ikfy4N)+0L@F-fqo">
+                        <field name="stateName">Idle</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="onresponse_any" id="0.40{vt`5Q`@]`$U-47r">
+            <statement name="actions">
+              <block type="say_utterance" id="d?E9:^zym=4lDXf2:fOS">
+                <statement name="utterance">
+                  <block type="utt_text" id="^Yv=a-_ohpu7mCGG)fpZ">
+                    <field name="text">I really like that one too</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="say_utterance" id="nqA}nCz4lTU*H@A~F;Z@">
+                    <statement name="utterance">
+                      <block type="utt_text" id="9Wg/J4i!Vos*ta/v_oB9">
+                        <field name="text">I'm sorry but I need to head off but we should do this again</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="goto" id="rQAdYGHzLP[R;WKyLKu|">
+                        <field name="stateName">Idle</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="onresponse_nothing" id="m3|}%#q:r#6AN,CnPC@G">
+                <statement name="actions">
+                  <block type="say_utterance" id="aYgv-[PE#yX.[FH0E9JY">
+                    <statement name="utterance">
+                      <block type="utt_text" id="mi;:0uFuJacN%IbQiuM4">
+                        <field name="text">I asked. What sport's do you like?</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="reentry" id="*;QJEo{f3Vw33d3X)Gp,"></block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="state" id="]*#+b^o/Z]r?m@WbCFD-" x="-969" y="287">
+    <field name="stateName">Idle</field>
+    <next>
+      <block type="ontime_repeat" id="EusD4@pBH@XPhQ2{d`gO">
+        <field name="from">2500</field>
+        <field name="to">5000</field>
+        <statement name="actions">
+          <block type="attend_random_angle" id="-6CT{+p9AZq|Hi)zaO8L">
+            <field name="min_y">-3</field>
+            <field name="max_y">3</field>
+            <field name="min_x">-10</field>
+            <field name="max_x">0</field>
+            <next>
+              <block type="infinite_random" id="1iqPT8K?nRssyRb@PH~P">
+                <statement name="randomOptions">
+                  <block type="random_option" id="V-2`Gs5}@*:02ruB5Y:3">
+                    <next>
+                      <block type="random_option" id="]h4NET@%tP0r9:{c1`wZ">
+                        <statement name="actions">
+                          <block type="infinite_random" id="tUAh|U$i/+Yuz7w#2p4y">
+                            <statement name="randomOptions">
+                              <block type="random_option" id="/3@DkY0^e@.(2`qo~9rQ">
+                                <statement name="actions">
+                                  <block type="action_gesture_param" id="cBv$Js?UsWD!$Gbr]!j.">
+                                    <field name="gesture">GazeAway</field>
+                                    <value name="strength">
+                                      <shadow type="text" id=".?7I5x~9srZZ/Dy~+g8,">
+                                        <field name="value">1.0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="duration">
+                                      <shadow type="text" id="LfOh:+@5;DgD`kU%o-d~">
+                                        <field name="value">3.5</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="random_option" id="G^99gPjFt1PvDgJ[2Ez7">
+                                    <statement name="actions">
+                                      <block type="action_gesture_param" id="|Uy$o8PEV#8hDt|JW`eH">
+                                        <field name="gesture">Shake</field>
+                                        <value name="strength">
+                                          <shadow type="text" id="I=i}Q9sldJ4vfG~@8Efi">
+                                            <field name="value">0.5</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="duration">
+                                          <shadow type="text" id="Yi7+Bh!-mK_?8A/$~?R{">
+                                            <field name="value">3.5</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="random_option" id=";!r/D)vOZsQd|,^D)l^@">
+                                        <statement name="actions">
+                                          <block type="action_gesture_param" id="nFsCm}mQ.{4Na]VC6Vp0">
+                                            <field name="gesture">Roll</field>
+                                            <value name="strength">
+                                              <shadow type="text" id="fp+mG9oNh8h(z%DDm|Or">
+                                                <field name="value">0.5</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="duration">
+                                              <shadow type="text" id="?w;Ta.HLP0f76E-.qPa=">
+                                                <field name="value">3.5</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="random_option" id="S2F6wR(*tJv0*2{INh)[">
+                                            <statement name="actions">
+                                              <block type="action_gesture_param" id="xZ-{h-}GkA3:xh0i4#.,">
+                                                <field name="gesture">CloseEyes</field>
+                                                <value name="strength">
+                                                  <shadow type="text" id="_Umo3Fb#l=a[XR.dR(ed">
+                                                    <field name="value">1</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="duration">
+                                                  <shadow type="text" id="_DI+cMJNRRfH8Uh}^m(P">
+                                                    <field name="value">5</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="onuserenter" id="aC#X^*{+Ue!y.SlYilp5">
+            <statement name="actions">
+              <block type="attend_user" id=")S6-*hQ.8Oy+Sb1~SP3b">
+                <field name="user">that user</field>
+                <next>
+                  <block type="goto" id="ry!aZHC7@-THoQP,[qyL">
+                    <field name="stateName">start</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="define_intent" id="2kfdc`bUDZo4wY0h5:Ed" x="-415" y="273">
+    <field name="intent_name" id="t{t?X$n3kP6moDnxhkNv" variabletype="IntentCandidate">Sad Feelings</field>
+    <value name="intent">
+      <block type="intent_simple" id=":Aw#8A^)4vfqR$v}J{2t">
+        <statement name="exampleBlocks">
+          <block type="intent_example" id="K%Px.dpad!U-s+.px?W]">
+            <field name="text">sad</field>
+            <next>
+              <block type="intent_example" id="K@4*9.b3e=)]jHw3)~5B">
+                <field name="text">Miserable</field>
+                <next>
+                  <block type="intent_example" id="iIqFAWssOlurq?PgmQ4Z">
+                    <field name="text">unhappy</field>
+                    <next>
+                      <block type="intent_example" id="MWNvm.]0G#*??)s^ZB*0">
+                        <field name="text">Depressed</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </value>
+  </block>
+  <block type="define_intent" id="{.DUKoLgbOqe!rxfSLT4" x="-419" y="517">
+    <field name="intent_name" id="(c,}:5Wo(;V7vvD68wb9" variabletype="IntentCandidate">Favourite Sports</field>
+    <value name="intent">
+      <block type="intent_simple" id="%lxq+QHo_id}6UH%i1Gi">
+        <statement name="exampleBlocks">
+          <block type="intent_example" id="VxUV*OWV8a*Ag;f/Pn-b">
+            <field name="text">Football</field>
+            <next>
+              <block type="intent_example" id="wid53:i9JE|WKo%=vJw6">
+                <field name="text">Rugby</field>
+                <next>
+                  <block type="intent_example" id="JY)LMZU$~J9v(XoaIgC(">
+                    <field name="text">Boxing</field>
+                    <next>
+                      <block type="intent_example" id="/T^IekVGCgXTj.`+bRnO">
+                        <field name="text">Formula 1</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </value>
+  </block>
+  <block type="state" id="S1l:vB[F+qs8i)kKW#jL" x="509" y="785">
+    <field name="stateName">WhyAreYouSad</field>
+    <statement name="actions">
+      <block type="ask_utterance" id="HVQtxBX9`Y8Ld{mcK]q_">
+        <statement name="utterance">
+          <block type="utt_text" id="+*ldthRnh_uERZSNhQtg">
+            <field name="text">Why are you sad?</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <next>
+      <block type="onresponse_any" id="M}k7F]qPvUc[L*![Z6!V">
+        <statement name="actions">
+          <block type="say_utterance" id="9DS~s0`l@4.bP=Ws4y1h">
+            <statement name="utterance">
+              <block type="utt_text" id="y-rioi$GR~KC+#ZoUW0y">
+                <field name="text">I'm sorry to hear that</field>
+              </block>
+            </statement>
+            <next>
+              <block type="action_gesture" id="XJ6TTFG}%`Mobv5].y!.">
+                <field name="gesture">ExpressSad</field>
+                <next>
+                  <block type="say_utterance" id="A~by9,]+qA)T1Ou_(:@9">
+                    <statement name="utterance">
+                      <block type="utt_text" id="%g~LWM?yKp#gBhDK5dG_">
+                        <field name="text">lets talk and get to know one another</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="goto" id="(}KMW-@b7~yT[35Kxb)H">
+                        <field name="stateName">WhatIsYourName</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

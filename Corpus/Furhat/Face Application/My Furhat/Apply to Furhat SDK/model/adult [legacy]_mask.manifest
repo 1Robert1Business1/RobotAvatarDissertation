@@ -1,0 +1,41 @@
+ManifestFileVersion: 0
+CRC: 1668077970
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 533ba70be6c2de7c8bc97a759a6b414d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 742b54a0dcb5945d7d22777f57a64918
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 376fac62e08f2074896f2aa8827a44fd, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefabs/bertil_mask.prefab
+Dependencies: []

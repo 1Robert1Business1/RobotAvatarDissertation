@@ -1,0 +1,25 @@
+{
+	"materialDefinitions": [
+		{
+			"name": "SkinMaterial",
+			"category": "skins",
+			"textures": {
+				"_MainTex": "skin"
+			}
+		},
+		{
+			"name": "LeftEyeMaterial",
+			"category": "eyes",
+			"textures": {
+				"_MainTex": "eyeL"
+			}
+		},
+		{
+			"name": "RightEyeMaterial",
+			"category": "eyes",
+			"textures": {
+				"_MainTex": "eyeR"
+			}
+		}
+	]
+}
