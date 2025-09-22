@@ -4,4 +4,4 @@ I used photogrammetry to build a realistic 3D facial model and implemented blend
 
 The project demonstrated how advanced AI can be combined with expressive visual design to create engaging, responsive avatars. It was awarded a Distinction, and it highlighted my ability to deliver a complex, multidisciplinary project from concept through to deployment, with both technical and user-focused outcomes.
 
-Some Images as well as the Unity software aspect have not been included due to Privacy reasons, but the results can still be produced by replacing certain images. For explanation of the work, seek out the dissertation PDF.
+Some Images, as well as the Unity software aspec,t have not been included due to Privacy reasons, but the results can still be produced by reading the dissertation PDF.
